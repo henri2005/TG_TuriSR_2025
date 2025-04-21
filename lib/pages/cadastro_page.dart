@@ -199,7 +199,7 @@ class _MyHomePageState extends State<CadastroPage> {
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (context) => LoginPage(title: ''),

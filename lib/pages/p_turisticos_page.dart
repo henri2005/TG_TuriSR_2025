@@ -457,9 +457,7 @@ class _MyHomePageState extends State<PontosTuristicosPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => MyHomePage(title: ''),
-                      ),
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
                     );
                   },
                   child: Text(

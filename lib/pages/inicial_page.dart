@@ -7,12 +7,6 @@ class InicialPage extends StatefulWidget {
 
   final String title;
 
-  @override
-  State<InicialPage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<InicialPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -107,5 +101,11 @@ class _MyHomePageState extends State<InicialPage> {
         ),
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }

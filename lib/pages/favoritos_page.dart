@@ -6,12 +6,6 @@ class FavoritosPage extends StatefulWidget {
 
   final String title;
 
-  @override
-  State<FavoritosPage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<FavoritosPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -162,9 +156,7 @@ class _MyHomePageState extends State<FavoritosPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => MyHomePage(title: ''),
-                      ),
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
                     );
                   },
                   child: Text(
@@ -218,5 +210,11 @@ class _MyHomePageState extends State<FavoritosPage> {
         ),
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }

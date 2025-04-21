@@ -118,7 +118,7 @@ class _MyHomePageState extends State<LoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MyHomePage(title: ''),
+                              builder: (context) => MyHomePage(),
                             ),
                           );
                         },
@@ -203,7 +203,7 @@ class _MyHomePageState extends State<LoginPage> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => CadastroPage(title: ''),

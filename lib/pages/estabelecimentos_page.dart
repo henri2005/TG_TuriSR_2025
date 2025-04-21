@@ -6,12 +6,6 @@ class EstabelecimentosPage extends StatefulWidget {
 
   final String title;
 
-  @override
-  State<EstabelecimentosPage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<EstabelecimentosPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -484,9 +478,7 @@ class _MyHomePageState extends State<EstabelecimentosPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => MyHomePage(title: ''),
-                      ),
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
                     );
                   },
                   child: Text(
@@ -540,5 +532,11 @@ class _MyHomePageState extends State<EstabelecimentosPage> {
         ),
       ),
     );
+  }
+
+  @override
+  // ignore: no_logic_in_create_state
+  State<StatefulWidget> createState() {
+    throw UnimplementedError();
   }
 }

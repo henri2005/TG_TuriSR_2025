@@ -5,12 +5,6 @@ class RecuperarPage extends StatefulWidget {
 
   final String title;
 
-  @override
-  State<RecuperarPage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<RecuperarPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -87,5 +81,12 @@ class _MyHomePageState extends State<RecuperarPage> {
         ),
       ),
     );
+  }
+
+  @override
+  // ignore: no_logic_in_create_state
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }

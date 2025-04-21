@@ -1,54 +1,13 @@
+import 'package:emulando_figma/pages/mapa_page.dart';
+import 'package:emulando_figma/ui_core/header.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        toolbarHeight: MediaQuery.of(context).size.height * 0.12,
-        leadingWidth: MediaQuery.of(context).size.width,
-        leading: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          spacing: 130,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Image.asset('assets/imagens/logo.jpg', height: 80.0),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Container(
-                decoration: BoxDecoration(color: Colors.amber),
-                child: PopupMenuButton(
-                  itemBuilder: (context) {
-                    return <PopupMenuItem<String>>[
-                      PopupMenuItem(child: Text("Mapa")),
-                      PopupMenuItem(child: Text('Estabelecimentos')),
-                    ];
-                  },
-                ),
-              );
-            },
-            icon: Icon(Icons.menu_rounded, color: Colors.white, size: 60),
-          ),
-        ],
-        iconTheme: IconThemeData(size: 60, opacity: 0.9),
-      ),
-
+      Header(title: 'Menu de cima'),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -139,10 +98,20 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(3.0),
-                              child: Icon(
-                                Icons.search,
-                                size: 40,
-                                color: Colors.white,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MapaPage(title: ''),
+                                    ),
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.search,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
@@ -161,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Text("Conheça São Roque", style: TextStyle(fontSize: 25)),
                       Image.asset(
-                        'assets/portal.png',
+                        'imagens/portal.png',
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height * 0.2,
                       ),
@@ -172,10 +141,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(3.0),
-                          child: Icon(
-                            Icons.search,
-                            size: 40,
-                            color: Colors.white,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MapaPage(title: ''),
+                                ),
+                              );
+                            },
+                            child: Icon(
+                              Icons.search,
+                              size: 40,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -204,9 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => MyHomePage(title: ''),
-                      ),
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
                     );
                   },
                   child: Text(
@@ -260,5 +237,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
